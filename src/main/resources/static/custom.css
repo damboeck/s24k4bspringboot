@@ -1,0 +1,190 @@
+
+/* Allgemeine Stile */
+body, html {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* Fixierter Header */
+header {
+    background-color: #2169a3;
+    color: white;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Fixierter Footer */
+footer {
+    background-color: #424242;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Scrollbarer Inhalt */
+.content {
+    margin-top: 60px; /* Höhe des Headers */
+    margin-bottom: 60px; /* Höhe des Footers */
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Logo-Styling */
+.logo img {
+    height: 40px;
+}
+
+/* Titel-Styling */
+.header-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Navigationslinks */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav.footer_nav a {
+    color: white;
+}
+
+nav a:hover {
+    background-color: #14355c;
+}
+
+nav.footer_nav a:hover {
+    background-color: #555;
+}
+
+pre {
+    background-color: #2d2d2d; /* Dunkler Hintergrund */
+    color: #f8f8f2; /* Helle Schriftfarbe */
+    font-family: 'Courier New', Courier, monospace; /* Monospace-Schrift für Code */
+    font-size: 15px;
+    line-height: 1.5; /* Besserer Zeilenabstand */
+    padding: 15px; /* Abstand innerhalb des <pre>-Tags */
+    border-radius: 5px; /* Abgerundete Ecken */
+    overflow: auto; /* Scrollen bei langem Code */
+    border: 1px solid #444; /* Rahmen für den <pre>-Tag */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Leichter Schatteneffekt */
+    /* Links-Einrückung */
+    margin-left: 40px; /* Abstand zur linken Seite */
+    width: calc(100% - 80px); /* Box verkleinern, damit der rechte Rand nicht abgeschnitten wird */
+}
+
+pre.config {
+    background-color: #fffdc7; /* Dunkler Hintergrund */
+    color: #474646; /* Helle Schriftfarbe */
+    font-family: 'Courier New', Courier, monospace; /* Monospace-Schrift für Code */
+    font-size: 15px;
+    line-height: 1.5; /* Besserer Zeilenabstand */
+    padding: 15px; /* Abstand innerhalb des <pre>-Tags */
+    border-radius: 5px; /* Abgerundete Ecken */
+    overflow: auto; /* Scrollen bei langem Code */
+    border: 1px solid #eadeb3; /* Rahmen für den <pre>-Tag */
+    box-shadow: 0 4px 8px rgba(136, 122, 73, 0.3); /* Leichter Schatteneffekt */
+    /* Links-Einrückung */
+    margin-left: 40px; /* Abstand zur linken Seite */
+    width: calc(100% - 80px); /* Box verkleinern, damit der rechte Rand nicht abgeschnitten wird */
+}
+
+/* Allgemeine Tabellenstile */
+table {
+    /*width: 100%;                 Die Tabelle nimmt die gesamte verfügbare Breite ein */
+    border-collapse: collapse;  /* Zellenränder zusammenführen */
+    background-color: #ffffff;  /* Weißer Hintergrund für die gesamte Tabelle */
+}
+
+/* Zellenränder definieren */
+table, th, td {
+    border: 1px solid #dddddd;  /* Dünne, graue Linien für die Tabelle und Zellen */
+}
+
+/* Tabellenkopf anpassen */
+thead th {
+    padding: 12px;              /* Abstand innerhalb der Kopfzeilenzellen */
+    background-color: #f2f2f2;  /* Hellgrauer Hintergrund für Kopfzeilen */
+    text-align: center;         /* Text in den Kopfzeilen zentrieren */
+}
+
+/* Stile für Tabellenkörper */
+tbody td {
+    padding: 10px;              /* Abstand innerhalb der Zellen */
+    text-align: left;           /* Text links ausrichten */
+}
+
+/* Hyperlinks in der Tabelle */
+tbody td a {
+    color: #0073e6;             /* Links in der Tabelle mit einer definierten Farbe */
+    text-decoration: none;      /* Standardunterstreichung von Links entfernen */
+}
+
+/* Hover-Effekt für Links */
+tbody td a:hover {
+    text-decoration: underline; /* Links unterstreichen bei Hover */
+}
+
+/* Abwechselnde Hintergrundfarbe für Tabellenzeilen */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Hellgraue Zeilenfarbe für gerade Zeilen */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;  /* Weiße Zeilenfarbe für ungerade Zeilen */
+}
+
+/* Media Query für Mobilgeräte: ausblenden bei Breite klein */
+@media only screen and (max-width: 700px) {
+    .handyoff {
+        display: none; /* Logo wird ausgeblendet */
+    }
+    nav a {
+        padding: 2px 2px;
+        border-radius: 1px;
+    }
+}
+
+/* Media Query für Monitor: ausblenden bei Breite gross */
+@media only screen and (min-width: 701px) {
+    .screenoff {
+        display: none; /* Logo wird ausgeblendet */
+    }
+}
