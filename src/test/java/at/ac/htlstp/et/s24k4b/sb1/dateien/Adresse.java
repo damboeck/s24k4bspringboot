@@ -25,16 +25,16 @@ public class Adresse {
     public Adresse(String csvline) {
         String[] columns = csvline.split(";");
         try {
-            vorname       = columns[0];
-            name          = columns[1];
-            strasse       = columns[2];
-            hausnummer    = columns[3];
+            vorname       = columns[0].trim();
+            name          = columns[1].trim();
+            strasse       = columns[2].trim();
+            hausnummer    = columns[3].trim();
             try {
-                plz = Integer.parseInt(columns[4]);
+                plz = Integer.parseInt(columns[4].trim());
             } catch (NumberFormatException e) {}
-            ort           = columns[5];
-            telefon       = columns[6];
-            String[] cells = columns[7].split("\\.");
+            ort           = columns[5].trim();
+            telefon       = columns[6].trim();
+            String[] cells = columns[7].trim().split("\\.");
             int day   = Integer.parseInt(cells[0]);
             int month = Integer.parseInt(cells[1])-1;
             int year  = Integer.parseInt(cells[2]);
@@ -52,7 +52,7 @@ public class Adresse {
             .append(ort).append(";")
             .append(telefon).append(";");
         if (geburtsdatum != null) {
-            sb.append(geburtsdatum.getDay() + "." + (geburtsdatum.getMonth() + 1) + "." + (geburtsdatum.getYear() + 1900));
+            sb.append(geburtsdatum.getDate() + "." + (geburtsdatum.getMonth() + 1) + "." + (geburtsdatum.getYear() + 1900));
         }
         return sb.toString();
     }
