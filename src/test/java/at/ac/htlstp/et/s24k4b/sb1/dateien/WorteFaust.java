@@ -2,7 +2,6 @@ package at.ac.htlstp.et.s24k4b.sb1.dateien;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.regex.Matcher;
